@@ -1,0 +1,212 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700|Lato:400,700");
+
+body {
+  background: #f2f2f2;
+}
+h1 {
+  font-family: "Montserrat";
+  text-transform: uppercase;
+}
+
+p {
+  font-family: "Lato";
+}
+
+/*
+--------
+IMAGES
+--------
+*/
+
+/* Home */
+.bg-cd img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(image_path('i.jpg'));
+  background-size: cover;
+  z-index: -1;
+}
+
+.home {
+  width: 480px;
+  margin: 0 auto;
+}
+
+
+.home h1 {
+  text-align: center;
+  font-weight: 700;
+}
+
+/* Gallery */
+.grid-sizer,
+.grid-item {
+  width: 33.333%;
+}
+
+.grid-item {
+  float: left;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	margin-bottom: 1em;	
+	cursor: pointer;
+}
+
+.grid-item img {
+  display: block;
+  max-width: 100%;
+  -webkit-filter: grayscale(1);
+}
+
+.grid-item:after {
+  position: absolute;
+  content: "";
+  top: 0; left: 0.5em ; right: 0.5em ; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.grid-item:hover:after {
+  opacity: 1;
+}
+
+/* Inspire */
+.fa {
+  color: white;
+  opacity: 0.6;
+  transition: all 0.4s ease-in-out;
+}
+
+.fa-clicked {
+  color: #ffff66;
+}
+
+.inspire {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  padding: 5px 12px;
+  border-radius: 100%;
+  border: 2px solid rgba(255,255,255,0.6);
+  background: rgba(0,0,0,0.7);
+  transform: translateX(-50%) translateY(-90%);
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.grid-item:hover .inspire {
+  opacity: 1;
+  z-index: 1;
+}
+
+.inspire:hover {
+  border-color: rgba(255,255,255,1);
+  background: rgba(0,0,0,1);
+}
+
+.inspire:hover .fa {
+  opacity: 1;
+}
+
+.inspired {
+  border-color: rgba(255, 255, 102, 0.6);
+}
+
+.inspired:hover {
+  border-color: rgba(255, 255, 102, 1);
+}
+
+/* Caption */
+.caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white;
+  text-align: center;
+  font-family: "Montserrat";
+  text-transform: uppercase;
+  transform: translateX(-50%) translateY(-50%);
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.grid-item:hover .caption {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Image Page */
+#show_image h1 {
+  margin-bottom: 12px;
+}
+
+#show_image p {
+  margin-top: 24px;
+}
+
+.img-responsive {
+  width: 100%;
+}
+
+/* Button */
+.center {
+  margin: 0 auto;
+  max-width: 120px;
+}
+.btn.btn-primary {
+  background: white;
+  color: grey;
+  border: 2px solid grey;
+  border-radius: 0;
+  transition: all 0.2s ease-in;
+}
+
+.btn.btn-primary:hover {
+  background: grey;
+  color: white;
+}
+
+/*Navigation Bar*/
+.navbar-default {
+  background: white;
+  border: none;
+}
+
+.navbar .container-fluid {
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.navbar-default a {
+  font-family: "Montserrat";
+  text-transform: uppercase;
+}
+
+.navbar-default li a:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-bottom: 2px solid #777;
+  transform: rotateY(90deg);
+  transition: all 0.4s;
+}
+
+.navbar-default li a:hover:after {
+  transform: rotateY(0deg);
+}
+
+/* Form */
+.shorter {
+  max-width: 400px;
+}
