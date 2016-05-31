@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>INSPIRE-MEE</title>
+  <title><%= full_title(yield(:title)) %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -21,7 +21,7 @@
     </div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">			
 				<ul class = "nav navbar-nav navbar-right">		
-				<li><%= link_to "Add Photo" %></li>
+				<li><%= link_to "Add Photo", new_image_path %></li>
 				</ul>			
 		</div>
 		</div>

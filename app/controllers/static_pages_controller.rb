@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
 
-	def home
+	def index
+		@images = Image.all
 	end
 
 	def about
