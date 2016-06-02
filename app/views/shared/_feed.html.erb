@@ -1,6 +1,6 @@
 <% if @images.any? %>
 	<% @images.each do |image| %>
-      <div class="grid-item">
+      <div class="grid-item col-xs-4">
       	<div class = "image">
 			<%= image_tag(image.link) %>
 		</div>
