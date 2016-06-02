@@ -55,7 +55,7 @@ IMAGES
   float: left;
 	padding-left: 0.5em;
 	padding-right: 0.5em;
-	margin-bottom: 1em;	
+	margin-bottom: 5em;	
 	cursor: pointer;
 }
 
@@ -65,7 +65,7 @@ IMAGES
   -webkit-filter: grayscale(1);
 }
 
-.grid-item:after {
+.image:after {
   position: absolute;
   content: "";
   top: 0; left: 0.5em ; right: 0.5em ; bottom: 0;
@@ -74,12 +74,19 @@ IMAGES
   transition: opacity 0.4s ease-in-out;
 }
 
-.grid-item:hover:after {
+.image:hover:after {
   opacity: 1;
 }
 
+.feature {
+  position: absolute;
+  background: white;
+  bottom: -4em; left: 0.5em; right: 0.5em;
+  padding: 5px 12px;
+} 
+
 /* Inspire */
-.fa {
+/* .fa {
   color: white;
   opacity: 0.6;
   transition: all 0.4s ease-in-out;
@@ -122,7 +129,7 @@ IMAGES
 
 .inspired:hover {
   border-color: rgba(255, 255, 102, 1);
-}
+} */
 
 /* Caption */
 .caption {

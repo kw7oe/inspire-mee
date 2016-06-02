@@ -29,13 +29,26 @@ class ImagesController < ApplicationController
 			render 'edit'
 		end
 	end
+	
 	def destroy
 	end
 
 	def inspired
+		@image = Image.find(params[:id])
+		@image.increase_count
+		respond_to do |format| 
+			format.html { redirect_to @image }
+			format.js
+		end
 	end
 
 	def uninspired
+		@image = Image.find(params[:id])
+		@image.decrease_count
+		respond_to do |format| 
+			format.html { redirect_to @image }
+			format.js
+		end
 	end
 
 	private

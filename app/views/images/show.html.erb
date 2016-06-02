@@ -2,8 +2,9 @@
 <h1 class = "text-center"><%= @image.caption %></h1>
 
 <%= render @image %>
-	<br>
-	<p>
-		<%= link_to "Edit Image", edit_image_path(@image) %>
-	</p>
+<br>
+<p><%= @image.inspired_count %></p>
+<p>
+	<%= link_to "Edit Image", edit_image_path(@image) %>
+</p>
 

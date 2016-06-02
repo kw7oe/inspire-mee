@@ -14,3 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require masonry.pkgd
+//= require imagesloaded.pkgd
+//= require custom
