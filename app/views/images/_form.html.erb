@@ -1,5 +1,8 @@
+<div class = "row">
 <div class = "col-md-6 col-md-offset-3">
-	<%= form_for @image do |f| %>
+	<%= form_for(@image, remote: true, html: { role: "form"}) do |f| %>
+	<div id="error_explanation" class="bg-danger text-danger">
+	</div>
 		<p>
 			<%= f.label :caption %>
 			<%= f.text_field :caption, class: 'form-control' %>
@@ -14,4 +17,5 @@
 			<%= f.submit "Add Image", class: 'btn btn-primary' %>
 		</p>
 	<% end %>
+</div>
 </div>

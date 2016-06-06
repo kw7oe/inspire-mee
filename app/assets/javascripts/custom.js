@@ -1,4 +1,4 @@
-$(document).on("page:change", function() {
+$(document).on("page:update", function() {
   
   //Image Grid Layout
   var $grid = $('.grid').masonry({
@@ -15,6 +15,10 @@ $(document).on("page:change", function() {
   });
   
 })
+
+
+
+
 
 
 

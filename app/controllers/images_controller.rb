@@ -1,16 +1,28 @@
 class ImagesController < ApplicationController
 	
+	def index
+		@images = Image.all
+	end
+
 	def new 
-		@image = Image.new
+		@image = Image.new		
 	end
 
 	def create
 		@image = Image.new(image_params)
-		if @image.save
-			redirect_to @image
-		else 
-			render 'new'
+		@images = Image.all
+		respond_to do |format| 
+			if @image.save
+				format.html { redirect_to @image }
+				format.json { head :no_content }
+				format.js
+			else
+				
+				format.json { render json: @image.errors.full_messages, 
+                            status: :unprocessable_entity }
+			end
 		end
+		
 	end
 
 	def show 
@@ -34,6 +46,7 @@ class ImagesController < ApplicationController
 	end
 
 	def inspired
+		@top_images = Image.all.reorder(inspired_count: :desc)
 		@image = Image.find(params[:id])
 		@image.increase_count
 		respond_to do |format| 

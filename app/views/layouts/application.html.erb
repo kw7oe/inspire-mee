@@ -21,7 +21,7 @@
     </div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">			
 				<ul class = "nav navbar-nav navbar-right">		
-				<li><%= link_to "Add Photo", new_image_path %></li>
+				<li><%= link_to "Add Image", new_image_path, remote: true, data: { dismiss: "modal" } %></li>
 				</ul>			
 		</div>
 		</div>
@@ -30,6 +30,7 @@
   <div class = "alert alert-<%= messages_type %>"><%= message %></div>
 <% end %>
 <%= yield %>
+
 
 </body>
 
