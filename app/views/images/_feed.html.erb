@@ -3,12 +3,13 @@
 	<% @images.each do |image| %>
       <div class="grid-item col-xs-4">
       	<div class = "image">
-			<%= image_tag(image.link) %>
+			<%= link_to image_tag(image.link), image %>
 		</div>
 		<div class = "feature">
 			<p id = "inspired-count-<%= image.id%>">Inspired <%= pluralize(image.inspired_count, "person") %></p>
-			<%= link_to 'Upvote', inspired_image_path(image), remote: true, method: :put %>
-			<%= link_to "Downvote", uninspired_image_path(image), remote: true, method: :put %>	
+			<div id = "inspire-form-<%= image.id%>">
+			<%= render 'inspired', image: image %>	
+			</div>
 		</div>
       </div>
     <% end %>

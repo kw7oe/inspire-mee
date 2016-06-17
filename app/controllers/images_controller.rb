@@ -1,7 +1,7 @@
 class ImagesController < ApplicationController
 	
 	def index
-		@images = Image.all
+		@images = Image.reorder(sort_by + " DESC");
 	end
 
 	def new 
@@ -67,6 +67,10 @@ class ImagesController < ApplicationController
 	private
 	def image_params
 		params.require(:image).permit(:link, :caption)
+	end
+
+	def sort_by
+		params[:sort] == "inspired_count" ? "inspired_count" : "created_at"
 	end
 
 

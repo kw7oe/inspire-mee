@@ -1,4 +1,10 @@
 <div class = "container-fluid">
+	<div class = "sort">
+		<ul>
+			<li><%= link_to "Latest" %></li>
+			<li><%= link_to "Most Inspired", :sort => "inspired_count" %></li>
+		</ul>
+	</div>
 	<div class = "grid">		
 		<%= render 'feed' %>
 	</div>

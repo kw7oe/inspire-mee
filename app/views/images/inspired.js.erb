@@ -1,3 +1,4 @@
+$("#inspire-form-<%= @image.id%>").html("<%= j render(partial: 'uninspired', locals: {image: @image}) %>");
 $('#inspired-count-<%= @image.id%>').html(
 	"Inspired <%= pluralize(@image.inspired_count, 'person') %>");
 
