@@ -1,8 +1,9 @@
 <div class = "container-fluid">
 	<div class = "sort">
 		<ul>
-			<li><%= link_to "Latest" %></li>
-			<li><%= link_to "Most Inspired", :sort => "inspired_count" %></li>
+			<li><strong>Sort by:</strong> </li>
+			<li><%= link_to '<i class="fa fa-calendar" aria-hidden="true"></i> Latest'.html_safe %></li>
+			<li><%= link_to '<i class="fa fa-star" aria-hidden="true"></i> Most Inspired'.html_safe, :sort => "inspired_count" %></li>
 		</ul>
 	</div>
 	<div class = "grid">		

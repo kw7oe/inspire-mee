@@ -76,10 +76,6 @@ IMAGES
   font-size: 1em;
 } 
 
-.sort {
-  list-style: none;
-}
-
 @media (max-width: 480px) {
   .grid-item {
     margin-bottom: 5px;
@@ -145,10 +141,11 @@ IMAGES
   color: white;
 }
 
-/*Navigation Bar*/
+/* Navigation Bar */
 .navbar-default {
   background: white;
   border: none;
+  margin-bottom: 0;
 }
 
 .navbar .container-fluid {
@@ -175,5 +172,28 @@ IMAGES
 
 .navbar-default li a:hover:after {
   transform: rotateY(0deg);
+}
+
+.sort {
+  ul {
+    list-style: none;
+    margin: 10px 0px; 
+    padding: 0;
+
+    li {
+      display: inline-block;
+      padding: 5px 12px;    
+
+      a {
+        color: #777;
+      }  
+
+      a:hover {
+        text-decoration: none;
+        transition: 0.4s ease-in-out;
+        color: #444;
+      }
+    }
+  }
 }
 

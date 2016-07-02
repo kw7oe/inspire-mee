@@ -46,7 +46,6 @@ class ImagesController < ApplicationController
 	end
 
 	def inspired
-		@top_images = Image.all.reorder(inspired_count: :desc)
 		@image = Image.find(params[:id])
 		@image.increase_count
 		respond_to do |format| 
