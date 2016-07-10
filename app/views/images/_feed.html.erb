@@ -3,16 +3,22 @@
 	<% @images.each do |image| %>
       <div class="grid-item col-xs-4">
       	<div class = "image">
-			<%= link_to image_tag(image.link), image %>
-		</div>
-		<div class = "feature">
-			<p id = "inspired-count-<%= image.id%>">Inspired <%= pluralize(image.inspired_count, "person") %></p>
-			<div id = "inspire-form-<%= image.id%>">
-			<%= render 'inspired', image: image %>	
-			</div>
-		</div>
+					<%= link_to image_tag(image.link), image %>
+				</div>
+				<div class = "feature">
+					<p id = "inspired-count-<%= image.id%>">Inspired <%= pluralize(image.inspired_count, "person") %></p>		
+					<% if session[:visitor]["#{image.id}"] %>
+						<div id = "inspire-form-<%= image.id%>">
+						<%= render 'uninspired', image: image %>
+						</div>
+					<% else %>
+						<div id = "inspire-form-<%= image.id%>">
+						<%= render 'inspired', image: image %>
+						</div>
+					<% end %>
+				</div>
       </div>
-    <% end %>
+  <% end %>
 <% else %>
 	<h1>Hello</h1>
 <% end %>
