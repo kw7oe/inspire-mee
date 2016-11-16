@@ -7,7 +7,7 @@
 				</div>
 				<div class = "feature">
 					<p id = "inspired-count-<%= image.id%>">Inspired <%= pluralize(image.inspired_count, "person") %></p>		
-					<% if session[:visitor]["#{image.id}"] %>
+					<% if session["#{image.id}"] %>
 						<div id = "inspire-form-<%= image.id%>">
 						<%= render 'uninspired', image: image %>
 						</div>
