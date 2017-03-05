@@ -17,13 +17,11 @@ class ImagesController < ApplicationController
 				format.html { redirect_to @image }
 				format.json { head :no_content }
 				format.js
-			else
-				
+			else				
 				format.json { render json: @image.errors.full_messages, 
                             status: :unprocessable_entity }
 			end
-		end
-		
+		end		
 	end
 
 	def show 		
