@@ -4,9 +4,14 @@
 @import "font-awesome";
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700|Lato:400,700");
 
-body {
-  background: #f2f2f2;
+html, body {
+  height: 100%;
 }
+
+body {
+  background: #F0F2F0;
+}
+
 h1 {
   font-family: "Montserrat";
   text-transform: uppercase;
@@ -16,33 +21,19 @@ p {
   font-family: "Lato";
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 /*
 --------
 IMAGES
 --------
 */
-
-/* Home */
-.bg-cd img {
+.center {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url(image_path('i.jpg'));
-  background-size: cover;
-  z-index: -1;
-}
-
-.home {
-  width: 480px;
-  margin: 0 auto;
-}
-
-
-.home h1 {
-  text-align: center;
-  font-weight: 700;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* Gallery */
@@ -51,39 +42,39 @@ IMAGES
 	padding-left: 0.5em;
 	padding-right: 0.5em;
 	margin-bottom: 1em;	
-}
 
-.grid-item img {
-  display: block;
-  width: 100%;  
+  img {
+    display: block;
+    width: 100%;    
+    border-radius: 8px 8px 0px 0px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+  }
 }
 
 .image {
   -webkit-filter: grayscale(1);
   -webkit-transition: all 0.8s;
   cursor: pointer;
-}
 
-.image:hover{
-  -webkit-filter: grayscale(0);
+  &:hover{
+    -webkit-filter: grayscale(0);
+  }
 }
 
 .feature {
   position: relative;
   background: white;  
+  background: linear-gradient(to top, #e4e4e4, #fff);
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
   padding: 5px 12px;
   font-size: 1em;
+  border-radius: 0px 0px 8px 8px;
 } 
 
 @media (max-width: 480px) {
   .grid-item {
-    margin-bottom: 5px;
+    width: 100%;
   }
-  .feature {
-    font-size: 4px;
-   
-    padding: 1px;
-  } 
 
   p {
     margin-bottom: 0;
@@ -110,12 +101,14 @@ IMAGES
 }
 
 /* Image Page */
-#show_image h1 {
-  margin-bottom: 12px;
-}
-
-#show_image p {
-  margin-top: 24px;
+#show_image {
+  h1 {
+    margin-bottom: 12px;
+  }
+  
+  p {
+    margin-top: 24px;
+  }
 }
 
 .img-responsive {
@@ -123,28 +116,75 @@ IMAGES
 }
 
 /* Button */
-.center {
-  margin: 0 auto;
-  max-width: 120px;
-}
 .btn.btn-primary {
   background: white;
   color: grey;
   border: 2px solid grey;
   border-radius: 0;
   transition: all 0.2s ease-in;
-}
 
-.btn.btn-primary:hover {
-  background: grey;
-  color: white;
+  &:hover {
+    background: grey;
+    color: white;
+  }
 }
 
 /* Navigation Bar */
 .navbar-default {
-  background: white;
+  background: #16222A; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #16222A , #3A6073); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #16222A , #3A6073); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
   border: none;
   margin-bottom: 0;
+  border-radius: 0;
+
+  .navbar-toggle:hover {
+    background-color: white;
+  }
+
+  a.navbar-brand:hover {
+    color: white;
+  }
+
+  .navbar-brand {
+    color: white;
+  }
+
+  .navbar-nav > li > a {
+    cursor: pointer;
+    color: white;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  a {
+    font-family: "Montserrat";
+    text-transform: uppercase;
+  }
+
+  li {
+    a {
+      &:hover {
+        &:after {
+          transform: rotateY(0deg);
+        }
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-bottom: 4px solid white;
+        transform: rotateY(90deg);
+        transition: all 0.4s;
+      }
+    }
+  }
 }
 
 .navbar .container-fluid {
@@ -152,28 +192,9 @@ IMAGES
   padding-left: 30px;
 }
 
-.navbar-default a {
-  font-family: "Montserrat";
-  text-transform: uppercase;
-}
-
-.navbar-default li a:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-bottom: 2px solid #777;
-  transform: rotateY(90deg);
-  transition: all 0.4s;
-}
-
-.navbar-default li a:hover:after {
-  transform: rotateY(0deg);
-}
-
 .sort {
+  color: #3A6073;
+
   ul {
     list-style: none;
     margin: 10px 0px; 
@@ -184,13 +205,12 @@ IMAGES
       padding: 5px 12px;    
 
       a {
-        color: #777;
+        color: #3A6073;
       }  
 
       a:hover {
         text-decoration: none;
-        transition: 0.4s ease-in-out;
-        color: #444;
+        color: darken(#3A6073, 10%);
       }
     }
   }

@@ -5,21 +5,17 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Image.create!(
-	link: "https://i.kinja-img.com/gawker-media/image/upload/ebaeet1udzknntbtepj6.jpg",
-	caption: "Luffy")
-Image.create!(
-	link: "http://static.comicvine.com/uploads/original/11121/111218568/4419134-9582889924-roron.png",
-	caption: "Zoro")
-Image.create!(
-	link: "https://upload.wikimedia.org/wikipedia/en/d/d2/Sawada_Tsunayoshi_6.jpg",
-	caption: "Tsuna")
-Image.create!(
-	link: "http://static.zerochan.net/Yamamoto.Takeshi.full.963934.jpg",
-	caption: "Yamamoto")
-Image.create!(
-	link: "https://s-media-cache-ak0.pinimg.com/736x/9d/86/30/9d86307c0138e16e19a3f7bbe509c678.jpg",
-	caption: "Naruto")
-Image.create!(
-	link: "http://orig04.deviantart.net/a19d/f/2012/049/6/9/naruto_shippuden_unsg_sasuke_arc_kage_render_by_theavengerx-d4q5q6z.png",
-	caption: "Sasuke")
+
+image_links = [
+  "http://handluggageonly.co.uk/wp-content/uploads/2015/08/Photography-Inspiration-8-Beautiful-Portrait-Photos-And-The-Reasons-Why-Theyre-Brilliant-005.jpg", 
+  "https://s-media-cache-ak0.pinimg.com/564x/e5/12/e3/e512e32d1e40bb992589b6b183e54f64.jpg", "http://www.92pixels.com/wp-content/uploads/2011/01/Logo-Design-Inspiration66.jpg", 
+  "http://www.architecturalrecord.com/ext/resources/Issues/2016/May/1605-Architecture-Creativity-Zaha-Hadid-01.jpg", 
+  "https://www.w3schools.com/css/img_lights.jpg", 
+  "https://upload.wikimedia.org/wikipedia/commons/b/b8/STmaximin-Solitude.jpg", 
+  "http://mymodernmet.com/wp/wp-content/uploads/archive/J-WwyVe7B6zjhdFJ00MR_1082106464.jpeg", 
+  "http://keenthemes.com/preview/metronic/theme/assets/global/plugins/jcrop/demos/demo_files/image1.jpg"
+]
+
+image_links.each do |link|
+  Image.create(link: link)
+end
