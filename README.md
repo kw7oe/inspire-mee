@@ -14,8 +14,27 @@ Cloning web applications is one of the way to improve one web deveploment skills
 ## Limitation
 
 * No image moderation is carried out. User is able to share adult contents.
-* URL provided must end with either JPEG or PNG extension.
-* Since, there is no user login required, this application track visitors by cookies to find out visitors' activities. E.g. whether the visitor has rate the image before.
+* URL provided must end with either JPEG, JPG, PNG extension. The image link is validated in code as below:
+```
+validates :link, format: { with: /(jpg|jpeg|png|JPG|PNG|JPEG)\Z/,
+			   message: "must be contained PNG/JPG extension." }
+```
+* Since, there is no user login required, this application track visitors by cookies to find out visitors' activities. E.g. whether the visitor has rate the image before. Below are how the inspired count is tracked:
+```
+def inspired
+	@image.increase_count
+
+	# Track if the visitor has upvoted the image. Not suitable if the application
+	# grow larger. Since the session is stored in Cookies Store, which has limited 
+	# storage of 4KB. 
+	session[@image.id] = true
+
+	respond_to do |format| 
+		format.html { redirect_to @image }
+		format.js
+	end
+end
+```
 * There is a visual bug during the pop up modal when a visitor click "Add Image" in Safari.
 
 ## Resources
